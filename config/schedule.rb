@@ -6,7 +6,7 @@
 # Example:
 #
 env :PATH, ENV['PATH']
-set :output, "log/cron_log.log"
+set :output, 'log/cron_log.log'
 # set :output, "/path/to/my/cron_log.log"
 #
 # every 2.hours do
@@ -15,8 +15,12 @@ set :output, "log/cron_log.log"
 #   rake "some:great:rake:task"
 # end
 #
-every 1.minute do
-  rake 'transactions:reCalculateTransactions'
+every 10.minute do
+  rake 'transactions:calculate_transactions'
+end
+
+every 6.minute do
+  rake 'transactions:get_resources'
 end
 
 # Learn more: http://github.com/javan/whenever
