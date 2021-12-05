@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Resource < ApplicationRecord
   validates :resource_type, presence: true, uniqueness: true
   validates :rate, presence: true
