@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Currency Name</th>
+    <th>Transaction Cost</th>
+    <th>Multisig Transaction Cost</th>
+  </tr>
+  <% @currencies.each do |currency| %>
+    <tr>
+      <td><%= currency.name %></td>
+      <td><%= currency.transaction_cost %></td>
+      <td><%= multisig_transaction_value(currency) %></td>
+    </tr>
+  <% end %>
+</table>
